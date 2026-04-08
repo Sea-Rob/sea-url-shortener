@@ -9,6 +9,11 @@ from app.utils import generate_short_id, is_valid_url
 logger = logging.getLogger(__name__)
 bp = Blueprint('routes', __name__)
 
+@bp.route('/', methods=['GET'])
+def index():
+    logger.debug("Received request for root URL; redirecting to primary corporate site.")
+    return redirect('https://www.smartenergyanswers.com.au')
+
 @bp.route('/shorten', methods=['POST'])
 def shorten():
     logger.info("New request to /shorten")

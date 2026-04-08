@@ -17,11 +17,6 @@ def create_app():
     logger.info(f"--- Sea URL Shortener Global App Initialized ---")
     logger.info(f"Operating Environment: {app.config.get('FLASK_ENV', 'production')}")
     
-    @app.route('/')
-    def index():
-        logger.debug("Received request for root URL; redirecting to primary corporate site.")
-        return redirect('https://www.smartenergyanswers.com.au')
-
     # --- EXTENSIONS ---
     db.init_app(app)
     limiter.init_app(app)
