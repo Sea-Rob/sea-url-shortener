@@ -52,6 +52,7 @@ def shorten():
 @bp.route('/<short_id>', methods=['GET'])
 @limiter.limit("5 per 5 minutes")
 def redirect_to_url(short_id):
+    # if length of short_id is greater than 5 redirect to url_for shorten
     logger.info(f"Redirect request for short_id: {short_id}")
     url_map = UrlMap.query.filter_by(short_id=short_id).first()
     
