@@ -1,0 +1,13 @@
+# common python ignore files
+venv
+**/venv
+__pycache__
+**/__pycache__
+.pytest_cache
+**/.pytest_cache
+.env
+**/.env
+.venv
+**/.venv
+.venv314
+**/.venv314
